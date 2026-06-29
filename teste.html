@@ -1,0 +1,566 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Prof. Luiz Felipe | Informática para Concursos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#2e3036",
+                    "surface-container-highest": "#32353a",
+                    "background": "#111318",
+                    "primary-fixed-dim": "#d1bcff",
+                    "secondary": "#4ed8ea",
+                    "surface-bright": "#37393f",
+                    "primary-fixed": "#eaddff",
+                    "surface-container": "#1d2025",
+                    "secondary-fixed-dim": "#4ed8ea",
+                    "secondary-fixed": "#95f1ff",
+                    "on-primary-fixed": "#24005b",
+                    "tech-blue": "#246BFE",
+                    "on-secondary-fixed-variant": "#004f57",
+                    "tertiary": "#ffb86b",
+                    "outline": "#948e9d",
+                    "tertiary-container": "#402300",
+                    "on-secondary": "#00363c",
+                    "on-error": "#690005",
+                    "on-primary-container": "#a07def",
+                    "surface-container-low": "#191c21",
+                    "primary-container": "#350080",
+                    "inverse-primary": "#6b49b7",
+                    "error": "#ffb4ab",
+                    "binary-purple": "#2D006B",
+                    "cyan-glow": "#13BFD3",
+                    "on-primary-fixed-variant": "#532e9d",
+                    "on-tertiary-fixed": "#2c1700",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#272a2f",
+                    "surface-dim": "#111318",
+                    "on-secondary-container": "#004047",
+                    "secondary-container": "#00b4c6",
+                    "surface-container-lowest": "#0b0e13",
+                    "surface": "#111318",
+                    "outline-variant": "#494552",
+                    "on-secondary-fixed": "#001f24",
+                    "surface-variant": "#32353a",
+                    "surface-tint": "#d1bcff",
+                    "on-tertiary-fixed-variant": "#683d00",
+                    "tertiary-fixed-dim": "#ffb86b",
+                    "on-background": "#e1e2e9",
+                    "on-surface-variant": "#cbc3d4",
+                    "deep-space": "#0E0524",
+                    "inverse-surface": "#e1e2e9",
+                    "on-tertiary": "#492900",
+                    "on-primary": "#3c0e86",
+                    "on-surface": "#e1e2e9",
+                    "primary": "#d1bcff",
+                    "tertiary-fixed": "#ffdcbc",
+                    "on-tertiary-container": "#d07e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap-mobile": "64px",
+                    "card-padding": "32px",
+                    "section-gap-desktop": "120px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "element-gap": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Sora"],
+                    "body-lg": ["Inter"],
+                    "code-snippet": ["Inter"],
+                    "display-lg": ["Sora"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Sora"],
+                    "display-lg-mobile": ["Sora"],
+                    "headline-xl": ["Sora"],
+                    "label-caps": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "code-snippet": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(45, 0, 107, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 191, 211, 0.1);
+        }
+        .glow-tertiary {
+            box-shadow: 0 0 20px rgba(255, 159, 28, 0.3);
+        }
+        .binary-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(19, 191, 211, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-deep-space text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-deep-space/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-cyan-glow/10 shadow-sm">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md font-bold text-primary">Prof. Luiz Felipe</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-cyan-glow border-b-2 border-cyan-glow pb-1 transition-colors duration-300" href="#inicio">Início</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-cyan-glow transition-colors duration-300" href="#sobre">Sobre</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-cyan-glow transition-colors duration-300" href="#cursos">Cursos</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-cyan-glow transition-colors duration-300" href="#metodo">Método</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-cyan-glow transition-colors duration-300" href="#faq">FAQ</a>
+</div>
+<a class="bg-tertiary text-on-tertiary px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform glow-tertiary" href="#">
+                Matricule-se Agora
+            </a>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 binary-bg" id="inicio">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 space-y-8">
+<div class="inline-block px-4 py-1 rounded-full bg-tech-blue/10 border border-tech-blue/30 text-cyan-glow font-label-caps text-xs uppercase tracking-widest">
+                        Informática para Concursos de Alto Nível
+                    </div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+                        Aprenda informática com <span class="text-cyan-glow">método</span>, clareza e foco na sua <span class="text-tertiary">aprovação</span>.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Cursos, aulas isoladas e mentorias estratégicas projetadas para você dominar a tecnologia e garantir sua vaga no serviço público.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-tertiary text-on-tertiary font-bold px-8 py-4 rounded-lg text-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform glow-tertiary">
+<span class="material-symbols-outlined">rocket_launch</span>
+                            Começar Agora
+                        </button>
+<button class="border-2 border-cyan-glow text-cyan-glow font-bold px-8 py-4 rounded-lg text-lg flex items-center justify-center gap-2 hover:bg-cyan-glow/10 transition-colors">
+<span class="material-symbols-outlined">chat</span>
+                            Falar no WhatsApp
+                        </button>
+</div>
+</div>
+<div class="md:col-span-5 relative flex justify-center">
+<div class="absolute -z-10 w-full h-full bg-cyan-glow/10 blur-[120px] rounded-full"></div>
+<div class="relative w-full max-w-[480px]">
+<img class="w-full h-auto rounded-2xl border-4 border-cyan-glow/20 shadow-2xl relative z-10" data-alt="A professional portrait of Professor Luiz Felipe, a distinguished academic with a modern aesthetic, wearing a sharp navy blue blazer and a tech-inspired glasses frame. He is smiling confidently against a high-tech studio background featuring subtle holographic binary code and network node overlays in deep purple and cyan tones. The lighting is crisp and cinematic, emphasizing his authority as a master educator in the IT field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByRPmEB73yZuiZ0pqwu-Axb6GJfybOwPhhkLQnYgiJ7MRtg32MIdjz0sM8k3gzwvzqsacklGiyjhjYdJwoCo4eKVt6OV5gSkOBUi2Zy6vPoRrTV9KQrFdc4impjLPH3kd-VIrtVS-w9S1cJptdbyFySvayHN1uVnfhvEX-x_3SEq-siGcVugo7iCE2GYEiAQ89BeHx6HRFHwZUGq-AAqoF5YDkcwAJEVmNeSZzInF7UXeuA5Qsq-pWXMgxyqHG3DsDYXhPvrGml_0">
+<!-- Floating Tech Elements -->
+<div class="absolute -top-6 -left-6 bg-deep-space/80 backdrop-blur-md p-4 rounded-xl border border-cyan-glow/30 animate-float">
+<span class="material-symbols-outlined text-cyan-glow text-4xl">shield</span>
+</div>
+<div class="absolute top-1/2 -right-10 bg-deep-space/80 backdrop-blur-md p-4 rounded-xl border border-tertiary/30 animate-float" style="animation-delay: 1s">
+<span class="material-symbols-outlined text-tertiary text-4xl">code</span>
+</div>
+<div class="absolute -bottom-6 left-1/4 bg-deep-space/80 backdrop-blur-md p-4 rounded-xl border border-tech-blue/30 animate-float" style="animation-delay: 2s">
+<span class="material-symbols-outlined text-tech-blue text-4xl">terminal</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Authority Section -->
+<section class="py-12 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center group">
+<div class="text-tertiary font-headline-xl text-headline-xl block mb-2 group-hover:scale-110 transition-transform">+10k</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Alunos Impactados</div>
+</div>
+<div class="text-center group">
+<div class="text-cyan-glow font-headline-xl text-headline-xl block mb-2 group-hover:scale-110 transition-transform">Mestre</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Titulação Acadêmica</div>
+</div>
+<div class="text-center group">
+<div class="text-tertiary font-headline-xl text-headline-xl block mb-2 group-hover:scale-110 transition-transform">100%</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Foco em Concursos</div>
+</div>
+<div class="text-center group">
+<div class="text-cyan-glow font-headline-xl text-headline-xl block mb-2 group-hover:scale-110 transition-transform">∞</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Sem Complicação</div>
+</div>
+</div>
+</section>
+<!-- About Professor -->
+<section class="py-section-gap-desktop bg-deep-space overflow-hidden" id="sobre">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="aspect-video relative rounded-3xl overflow-hidden border border-cyan-glow/20 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="An action shot of Professor Luiz Felipe lecturing in a high-tech modern classroom environment. He is gesturing towards a large interactive screen displaying complex data structures and cybersecurity protocols. The classroom has a sleek dark aesthetic with neon cyan accent lighting. The students in the foreground are blurred, focusing the viewer's attention on the Professor's passionate and clear teaching style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJBRWI6wXtQQoJaGtqwY-Iu2h945wZXHVugapDRH5RlB6uKP9Lb_ETOJNrVzscPzuAnD8Tt-IXxJSg9lVsidf_FBYJosYYwyQ8ZPA0AHPG2832wqXqDG-WxgDTNRL6swdNSotto1kjStuELpWPAD3EWOvUlXqiQIc5a5QNPDX4DiBe9VjmQYekzuI0Uw7xFg_pi7F-rCaPx5eRaHRSiJ3MZ7iz9h7jQX6-wcAWlbTMWFkZEAEi0ttNr80hzFKiGsVBUmLEHryFWIs">
+<div class="absolute inset-0 bg-gradient-to-t from-deep-space/80 to-transparent flex items-end p-8">
+<p class="text-white italic">"Minha missão é transformar a informática de vilã em aliada na sua aprovação."</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-6">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Didática de <span class="text-cyan-glow">Mestre</span> aplicada ao seu sonho.</h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                        Luiz Felipe é Professor Mestre com anos de experiência preparando candidatos para os concursos mais difíceis do Brasil. Sua abordagem une o rigor acadêmico com as necessidades práticas da prova.
+                    </p>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                        Esqueça decorebas inúteis. Aqui, você entende a lógica dos sistemas, a estrutura das redes e a mentalidade das bancas examinadoras. É informática ensinada por quem realmente domina a tecnologia.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-cyan-glow">check_circle</span>
+<span class="">Mestrado em Computação Aplicada</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-cyan-glow">check_circle</span>
+<span class="">Especialista em Segurança da Informação</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-cyan-glow">check_circle</span>
+<span class="">Anos de experiência em cursinhos preparatórios</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Solutions Bento Grid -->
+<section class="py-section-gap-desktop bg-surface-container-lowest" id="cursos">
+<div class="max-w-container-max mx-auto px-gutter mb-16 text-center">
+<h2 class="font-headline-xl text-headline-xl mb-4">Escolha sua <span class="text-cyan-glow">Jornada</span></h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Soluções modulares para cada fase da sua preparação.</p>
+</div>
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="glass-panel p-card-padding rounded-3xl border border-white/5 flex flex-col hover:border-cyan-glow/40 transition-all duration-500 group">
+<div class="w-16 h-16 rounded-2xl bg-cyan-glow/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-cyan-glow text-4xl">school</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Cursos Completos</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">A base definitiva. Do zero ao avançado em todos os tópicos de editais de alto nível.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-cyan-glow text-lg">check</span> Teoria Completa + Exercícios
+                        </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-cyan-glow text-lg">check</span> PDFs Comentados
+                        </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-cyan-glow text-lg">check</span> Acesso por 12 meses
+                        </li>
+</ul>
+<button class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-bold hover:bg-cyan-glow hover:text-deep-space transition-all">Ver Detalhes</button>
+</div>
+<!-- Course 2 -->
+<div class="glass-panel p-card-padding rounded-3xl border border-tertiary/20 flex flex-col scale-105 shadow-2xl relative overflow-hidden group">
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-tighter">Mais Procurado</div>
+<div class="w-16 h-16 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-4xl">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Aulas Isoladas</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">Foco total no seu ponto fraco. Redes, Excel, Linux ou Segurança. Você escolhe.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg">check</span> Tópicos Específicos
+                        </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg">check</span> Questões de Bancas Específicas
+                        </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg">check</span> Direto ao Ponto
+                        </li>
+</ul>
+<button class="w-full py-4 bg-tertiary text-on-tertiary rounded-xl font-bold glow-tertiary hover:scale-[1.02] transition-all">Comprar Agora</button>
+</div>
+<!-- Course 3 -->
+<div class="glass-panel p-card-padding rounded-3xl border border-white/5 flex flex-col hover:border-tech-blue/40 transition-all duration-500 group">
+<div class="w-16 h-16 rounded-2xl bg-tech-blue/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tech-blue text-4xl">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Mentorias</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">Acompanhamento individual para quem busca a elite dos concursos. Planejamento sob medida.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-tech-blue text-lg">check</span> Encontros Ao Vivo
+                        </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-tech-blue text-lg">check</span> Análise de Desempenho
+                        </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-tech-blue text-lg">check</span> Suporte no WhatsApp
+                        </li>
+</ul>
+<button class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-bold hover:bg-tech-blue hover:text-white transition-all">Saber Mais</button>
+</div>
+</div>
+</section>
+<!-- Method Timeline -->
+<section class="py-section-gap-desktop bg-deep-space relative" id="metodo">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl mb-4 text-on-surface">O Método <span class="text-cyan-glow">E.E.P.R.</span></h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Desenvolvido para fixação máxima e zero esquecimento.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-cyan-glow/20 to-transparent -translate-y-1/2"></div>
+<!-- Step 1 -->
+<div class="relative z-10 text-center space-y-4">
+<div class="w-12 h-12 rounded-full bg-cyan-glow text-deep-space font-bold flex items-center justify-center mx-auto ring-8 ring-cyan-glow/10">01</div>
+<h4 class="font-headline-md text-headline-md">Entendimento</h4>
+<p class="text-on-surface-variant text-sm">Contextualização dos conceitos fundamentais da tecnologia.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 text-center space-y-4">
+<div class="w-12 h-12 rounded-full bg-cyan-glow text-deep-space font-bold flex items-center justify-center mx-auto ring-8 ring-cyan-glow/10">02</div>
+<h4 class="font-headline-md text-headline-md">Explicação</h4>
+<p class="text-on-surface-variant text-sm">Simplificação de termos técnicos para a linguagem do concurso.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 text-center space-y-4">
+<div class="w-12 h-12 rounded-full bg-cyan-glow text-deep-space font-bold flex items-center justify-center mx-auto ring-8 ring-cyan-glow/10">03</div>
+<h4 class="font-headline-md text-headline-md">Prática</h4>
+<p class="text-on-surface-variant text-sm">Resolução exaustiva de questões das principais bancas.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 text-center space-y-4">
+<div class="w-12 h-12 rounded-full bg-cyan-glow text-deep-space font-bold flex items-center justify-center mx-auto ring-8 ring-cyan-glow/10">04</div>
+<h4 class="font-headline-md text-headline-md">Revisão</h4>
+<p class="text-on-surface-variant text-sm">Flashcards e resumos focados no que cai de verdade.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Subjects Grid -->
+<section class="py-section-gap-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-xl text-headline-xl mb-4">Domine todos os <span class="text-cyan-glow">Tópicos</span></h2>
+<p class="text-on-surface-variant">Do básico ao avançado, cobrimos 100% do que as bancas exigem.</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="px-6 py-3 rounded-xl bg-deep-space border border-cyan-glow/20 flex items-center gap-3 hover:bg-cyan-glow/10 transition-colors cursor-default group">
+<span class="material-symbols-outlined text-cyan-glow">window</span>
+<span class="font-semibold">Windows 10/11</span>
+</div>
+<div class="px-6 py-3 rounded-xl bg-deep-space border border-cyan-glow/20 flex items-center gap-3 hover:bg-cyan-glow/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-cyan-glow">terminal</span>
+<span class="font-semibold">Linux (Ubuntu/CentOS)</span>
+</div>
+<div class="px-6 py-3 rounded-xl bg-deep-space border border-cyan-glow/20 flex items-center gap-3 hover:bg-cyan-glow/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-cyan-glow">description</span>
+<span class="font-semibold">Pacote Office</span>
+</div>
+<div class="px-6 py-3 rounded-xl bg-deep-space border border-cyan-glow/20 flex items-center gap-3 hover:bg-cyan-glow/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-cyan-glow">language</span>
+<span class="font-semibold">Redes de Computadores</span>
+</div>
+<div class="px-6 py-3 rounded-xl bg-deep-space border border-cyan-glow/20 flex items-center gap-3 hover:bg-cyan-glow/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-cyan-glow">lock</span>
+<span class="font-semibold">Segurança da Informação</span>
+</div>
+<div class="px-6 py-3 rounded-xl bg-deep-space border border-cyan-glow/20 flex items-center gap-3 hover:bg-cyan-glow/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-cyan-glow">cloud</span>
+<span class="font-semibold">Cloud Computing</span>
+</div>
+<div class="px-6 py-3 rounded-xl bg-deep-space border border-cyan-glow/20 flex items-center gap-3 hover:bg-cyan-glow/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-cyan-glow">smart_toy</span>
+<span class="font-semibold">Inteligência Artificial</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-gap-desktop bg-deep-space">
+<div class="max-w-container-max mx-auto px-gutter text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl mb-4">O que dizem os <span class="text-tertiary">Futuros Servidores</span></h2>
+</div>
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container p-8 rounded-3xl border-l-4 border-tertiary italic relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-white/10 text-6xl">format_quote</span>
+<p class="text-on-surface-variant mb-6 relative z-10">"Informática sempre foi meu pesadelo. Com o Luiz, tudo começou a fazer sentido. Acertei 9 de 10 na prova da PF."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center font-bold text-tertiary">AM</div>
+<div>
+<div class="font-bold">André Martins</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-widest">Aprovado PF</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-3xl border-l-4 border-cyan-glow italic relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-white/10 text-6xl">format_quote</span>
+<p class="text-on-surface-variant mb-6 relative z-10">"A didática dele é surreal. Ele explica Redes como se estivesse contando uma história. Recomendo demais!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-cyan-glow/20 flex items-center justify-center font-bold text-cyan-glow">CS</div>
+<div>
+<div class="font-bold">Carla Souza</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-widest">Aluna Auditoria</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-3xl border-l-4 border-tech-blue italic relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-white/10 text-6xl">format_quote</span>
+<p class="text-on-surface-variant mb-6 relative z-10">"Mentoria que vale cada centavo. O Luiz não só ensina a matéria, mas como estudar informática de forma eficiente."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tech-blue/20 flex items-center justify-center font-bold text-tech-blue">RF</div>
+<div>
+<div class="font-bold">Ricardo Ferreira</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-widest">Futuro Delegado</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call -->
+<section class="py-section-gap-desktop bg-deep-space relative overflow-hidden">
+
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="bg-gradient-to-br from-binary-purple to-deep-space p-12 md:p-24 rounded-[40px] border border-cyan-glow/20 text-center shadow-2xl">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8">Pronto para sua <span class="text-cyan-glow">Vaga?</span></h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">Não deixe que a informática te afaste da sua aprovação. Comece agora sua preparação com quem é especialista no assunto.</p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-tertiary text-on-tertiary px-12 py-5 rounded-2xl font-bold text-xl glow-tertiary hover:scale-105 transition-transform">Quero ser Aluno</button>
+<button class="bg-white/5 border border-white/10 backdrop-blur-md px-12 py-5 rounded-2xl font-bold text-xl hover:bg-white/10 transition-colors">Dúvidas? Fale Conosco</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ & Contact -->
+<section class="py-section-gap-desktop bg-surface-container-lowest" id="faq">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-20">
+<div>
+<h2 class="font-headline-xl text-headline-xl mb-12">Perguntas <span class="text-cyan-glow">Frequentes</span></h2>
+<div class="space-y-4">
+<div class="border-b border-white/10 pb-4">
+<button class="w-full flex justify-between items-center text-left hover:text-cyan-glow transition-colors" onclick="toggleFaq(0)">
+<span class="font-headline-md">O curso serve para qual banca?</span>
+<span class="material-symbols-outlined transition-transform" id="icon-0">add</span>
+</button>
+<div class="hidden mt-4 text-on-surface-variant" id="faq-0">
+                                Nossos cursos cobrem as principais bancas: FGV, Cebraspe, FCC, Vunesp e bancas regionais. O método é adaptável a qualquer estilo de cobrança.
+                            </div>
+</div>
+<div class="border-b border-white/10 pb-4">
+<button class="w-full flex justify-between items-center text-left hover:text-cyan-glow transition-colors" onclick="toggleFaq(1)">
+<span class="font-headline-md">Tenho muita dificuldade com tecnologia.</span>
+<span class="material-symbols-outlined transition-transform" id="icon-1">add</span>
+</button>
+<div class="hidden mt-4 text-on-surface-variant" id="faq-1">
+                                Perfeito! O curso foi desenhado justamente para quem não é da área de TI, usando analogias simples e explicação passo a passo.
+                            </div>
+</div>
+<div class="border-b border-white/10 pb-4">
+<button class="w-full flex justify-between items-center text-left hover:text-cyan-glow transition-colors" onclick="toggleFaq(2)">
+<span class="font-headline-md">Como funciona o suporte?</span>
+<span class="material-symbols-outlined transition-transform" id="icon-2">add</span>
+</button>
+<div class="hidden mt-4 text-on-surface-variant" id="faq-2">
+                                Todas as dúvidas são tiradas diretamente na plataforma ou, em casos de mentoria, através de um canal exclusivo no WhatsApp.
+                            </div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-12 rounded-[32px]" id="contato">
+<h3 class="font-headline-lg text-headline-lg mb-8">Envie sua Mensagem</h3>
+<form class="space-y-6">
+<div>
+<label class="font-label-caps text-label-caps block mb-2 text-on-surface-variant">Nome Completo</label>
+<input class="w-full bg-deep-space border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-glow focus:ring-1 focus:ring-cyan-glow outline-none transition-all" type="text">
+</div>
+<div>
+<label class="font-label-caps text-label-caps block mb-2 text-on-surface-variant">E-mail</label>
+<input class="w-full bg-deep-space border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-glow focus:ring-1 focus:ring-cyan-glow outline-none transition-all" type="email">
+</div>
+<div>
+<label class="font-label-caps text-label-caps block mb-2 text-on-surface-variant">Mensagem</label>
+<textarea class="w-full bg-deep-space border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-glow focus:ring-1 focus:ring-cyan-glow outline-none transition-all" rows="4"></textarea>
+</div>
+<button class="w-full bg-cyan-glow text-deep-space font-bold py-4 rounded-xl hover:opacity-90 transition-opacity" type="submit">Enviar Agora</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap-mobile md:py-16">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-element-gap">
+<div class="space-y-6">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Prof. Luiz Felipe</div>
+<p class="text-on-surface-variant max-w-xs">Especialista em informática para concursos, transformando a tecnologia em uma ferramenta de aprovação.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-glow/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-cyan-glow">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-glow/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-cyan-glow">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Links Úteis</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Cursos Completos</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Termos de Uso</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Política de Privacidade</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Suporte Aluno</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Contato</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-cyan-glow">mail</span>
+                        contato@profluizfelipe.com.br
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-cyan-glow">chat</span>
+                        WhatsApp: (11) 99999-9999
+                    </li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/5 text-center text-sm text-on-surface-variant">
+            © 2024 Professor Luiz Felipe - Especialista em Informática para Concursos. Todos os direitos reservados.
+        </div>
+</footer>
+<script>
+        function toggleFaq(index) {
+            const content = document.getElementById(`faq-${index}`);
+            const icon = document.getElementById(`icon-${index}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(45deg)';
+                icon.innerText = 'add';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+                icon.innerText = 'add';
+            }
+        }
+    </script>
+</body></html>
