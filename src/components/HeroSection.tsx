@@ -1,11 +1,8 @@
 export function HeroSection() {
   return (
-    <section className="relative pt-32 pb-12 md:pt-48 md:pb-16 binary-bg" id="inicio">
+    <section className="relative pt-32 pb-12 md:pt-48 md:pb-16 binary-bg mt-[-30px]" id="inicio">
       <div className="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7 space-y-8">
-          <div className="inline-block px-4 py-1 rounded-full bg-tech-blue/10 border border-tech-blue/30 text-cyan-glow font-label-caps text-xs uppercase tracking-widest">
-            Informática para Concursos de Alto Nível
-          </div>
           <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
             Aprenda informática com <span className="text-cyan-glow">método</span>, clareza e foco na sua <span className="text-tertiary">aprovação</span>.
           </h1>

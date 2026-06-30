@@ -61,12 +61,12 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* Custom variables from teste.html */
-  --color-deep-space: #0E0524;
-  --color-cyan-glow: #13BFD3;
-  --color-tech-blue: #246BFE;
+  --color-deep-space: #0e0524;
+  --color-cyan-glow: #13bfd3;
+  --color-tech-blue: #246bfe;
   --color-tertiary: #ffb86b;
   --color-on-tertiary: #492900;
-  --color-binary-purple: #2D006B;
+  --color-binary-purple: #2d006b;
   --color-on-surface: #e1e2e9;
   --color-on-surface-variant: #cbc3d4;
   --color-surface-container-lowest: #0b0e13;
@@ -79,15 +79,15 @@
   --spacing-gutter: 24px;
   --spacing-element-gap: 16px;
 
-  --font-headline-lg: Sora, sans-serif;
-  --font-body-lg: Inter, sans-serif;
+  --font-headline-lg: Oswald, sans-serif;
+  --font-body-lg: Oswald, sans-serif;
   --font-code-snippet: Inter, monospace;
-  --font-display-lg: Sora, sans-serif;
-  --font-body-md: Inter, sans-serif;
-  --font-headline-md: Sora, sans-serif;
-  --font-display-lg-mobile: Sora, sans-serif;
-  --font-headline-xl: Sora, sans-serif;
-  --font-label-caps: 'Plus Jakarta Sans', sans-serif;
+  --font-display-lg: Oswald, sans-serif;
+  --font-body-md: Oswald, sans-serif;
+  --font-headline-md: Oswald, sans-serif;
+  --font-display-lg-mobile: Oswald, sans-serif;
+  --font-headline-xl: Oswald, sans-serif;
+  --font-label-caps: Oswald, sans-serif;
 
   --text-headline-lg: 32px;
   --text-headline-lg--line-height: 40px;
@@ -100,7 +100,7 @@
   --text-display-lg: 64px;
   --text-display-lg--line-height: 72px;
   --text-display-lg--letter-spacing: -0.02em;
-  --text-display-lg--font-weight: 800;
+  --text-display-lg--font-weight: 700;
 
   --text-body-md: 16px;
   --text-body-md--line-height: 24px;
@@ -112,7 +112,7 @@
 
   --text-display-lg-mobile: 40px;
   --text-display-lg-mobile--line-height: 48px;
-  --text-display-lg-mobile--font-weight: 800;
+  --text-display-lg-mobile--font-weight: 700;
 
   --text-headline-xl: 48px;
   --text-headline-xl--line-height: 56px;
@@ -200,34 +200,123 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  button,
+  a,
+  input,
+  textarea {
+    outline-offset: 3px;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-cyan-glow);
   }
 }
 
 @layer utilities {
   .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
   }
+
   .glass-panel {
-    background: rgba(45, 0, 107, 0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(19, 191, 211, 0.1);
+    background: linear-gradient(135deg, rgba(45, 0, 107, 0.48), rgba(29, 32, 37, 0.62));
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(19, 191, 211, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
+
   .glow-tertiary {
     box-shadow: 0 0 20px rgba(255, 159, 28, 0.3);
   }
+
+  .section-shell {
+    max-width: var(--spacing-container-max);
+    margin-inline: auto;
+    padding-inline: var(--spacing-gutter);
+  }
+
+  .headline-balance {
+    text-wrap: balance;
+  }
+
+  .body-pretty {
+    text-wrap: pretty;
+  }
+
+  .pressable {
+    transition:
+      transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pressable:hover {
+    transform: translateY(-2px);
+  }
+
+  .pressable:active {
+    transform: translateY(0) scale(0.98);
+  }
+
   .binary-bg {
-    background-image: radial-gradient(circle at 2px 2px, rgba(19, 191, 211, 0.05) 1px, transparent 0);
-    background-size: 24px 24px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(14, 5, 36, 0.98) 0%,
+        rgba(14, 5, 36, 0.94) 48%,
+        rgba(11, 14, 19, 1) 100%
+      ),
+      var(--color-deep-space);
   }
+
   @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
   }
+
   .animate-float {
     animation: float 4s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .animate-float {
+      animation: none;
+    }
+
+    .pressable,
+    .pressable:hover,
+    .pressable:active {
+      transform: none;
+      transition: none;
+    }
   }
 }

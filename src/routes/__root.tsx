@@ -77,14 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Prof. Luiz Felipe | Informática para Concursos" },
+      {
+        name: "description",
+        content: "Cursos, aulas isoladas e mentorias de informática para concursos de alto nível.",
+      },
+      { name: "author", content: "Prof. Luiz Felipe" },
+      { property: "og:title", content: "Prof. Luiz Felipe | Informática para Concursos" },
+      {
+        property: "og:description",
+        content: "Aprenda informática com método, clareza e foco na aprovação.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@profluizfelipe" },
     ],
     links: [
       {
@@ -98,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap",
       },
       {
         rel: "stylesheet",
