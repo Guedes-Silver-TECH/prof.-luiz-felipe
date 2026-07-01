@@ -14,19 +14,19 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-deep-space px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <h1 className="text-7xl font-bold text-on-surface">404</h1>
+        <h2 className="mt-4 text-xl font-semibold text-on-surface">Página não encontrada</h2>
+        <p className="mt-2 text-sm text-on-surface-variant">
+          A página que você procura não existe ou foi movida.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="btn-primary inline-flex items-center justify-center text-sm"
           >
-            Go home
+            Voltar ao Início
           </Link>
         </div>
       </div>
@@ -42,13 +42,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-deep-space px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+        <h1 className="text-xl font-semibold tracking-tight text-on-surface">
+          Esta página não carregou
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+        <p className="mt-2 text-sm text-on-surface-variant">
+          Algo deu errado. Você pode tentar recarregar ou voltar ao início.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -56,15 +56,15 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="btn-primary inline-flex items-center justify-center text-sm"
           >
-            Try again
+            Tentar novamente
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="btn-secondary inline-flex items-center justify-center text-sm"
           >
-            Go home
+            Voltar ao Início
           </a>
         </div>
       </div>
@@ -72,51 +72,98 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Prof. Luiz Felipe | Informática para Concursos" },
-      {
-        name: "description",
-        content: "Cursos, aulas isoladas e mentorias de informática para concursos de alto nível.",
-      },
-      { name: "author", content: "Prof. Luiz Felipe" },
-      { property: "og:title", content: "Prof. Luiz Felipe | Informática para Concursos" },
-      {
-        property: "og:description",
-        content: "Aprenda informática com método, clareza e foco na aprovação.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@profluizfelipe" },
-    ],
-    links: [
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-        crossOrigin: "anonymous",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap",
-      },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
-  shellComponent: RootShell,
-  component: RootComponent,
-  notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
-});
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
+  {
+    head: () => ({
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          title:
+            "Prof. Luiz Felipe | Informática para Concursos — Cursos, Aulas e Mentorias",
+        },
+        {
+          name: "description",
+          content:
+            "Aprenda informática para concursos com método comprovado. Cursos completos, aulas isoladas e mentorias individuais para PF, PRF, TCU e mais. 500+ alunos aprovados.",
+        },
+        { name: "author", content: "Prof. Luiz Felipe" },
+        { name: "theme-color", content: "#0b001a" },
+        {
+          property: "og:title",
+          content:
+            "Prof. Luiz Felipe | Informática para Concursos",
+        },
+        {
+          property: "og:description",
+          content:
+            "Aprenda informática com método, clareza e foco na aprovação. Cursos, aulas isoladas e mentorias estratégicas.",
+        },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://profluizfelipe.com.br" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@profluizfelipe" },
+        {
+          name: "twitter:title",
+          content: "Prof. Luiz Felipe | Informática para Concursos",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Aprenda informática com método, clareza e foco na aprovação.",
+        },
+      ],
+      links: [
+        {
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossOrigin: "anonymous",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap",
+        },
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+        {
+          rel: "canonical",
+          href: "https://profluizfelipe.com.br",
+        },
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Prof. Luiz Felipe",
+            jobTitle: "Professor de Informática para Concursos",
+            description:
+              "Professor Mestre especialista em informática para concursos públicos de alto nível.",
+            url: "https://profluizfelipe.com.br",
+            knowsAbout: [
+              "Informática para Concursos",
+              "Redes de Computadores",
+              "Segurança da Informação",
+              "Sistemas Operacionais",
+              "Pacote Office",
+            ],
+          }),
+        },
+      ],
+    }),
+    shellComponent: RootShell,
+    component: RootComponent,
+    notFoundComponent: NotFoundComponent,
+    errorComponent: ErrorComponent,
+  },
+);
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
